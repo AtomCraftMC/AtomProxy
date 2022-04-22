@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.andrei1058.bedwars.proxy.BedWarsProxy.config;
 import static com.andrei1058.bedwars.proxy.BedWarsProxy.getParty;
@@ -122,7 +123,7 @@ public class ArenaManager implements BedWars.ArenaUtil {
         }
 
         List<CachedArena> arenaList = new ArrayList<>();
-        getArenas().forEach(a -> {
+        getArenas().stream().collect(Collectors.toUnmodifiableList()).forEach(a -> {
             if (a.getArenaGroup().equalsIgnoreCase(group)) arenaList.add(a);
         });
         arenaList.sort(getComparator());
@@ -164,7 +165,8 @@ public class ArenaManager implements BedWars.ArenaUtil {
             p.sendMessage(LanguageManager.get().getMsg(p, Messages.COMMAND_JOIN_DENIED_NOT_PARTY_LEADER));
             return false;
         }
-        List<CachedArena> arenaList = new ArrayList<>(getArenas());
+        List<CachedArena> arenaList = new ArrayList<>();
+        arenaList.addAll(getArenas().stream().collect(Collectors.toUnmodifiableList()));
         arenaList.sort(getComparator());
 
         int amount = BedWarsProxy.getParty().hasParty(p.getUniqueId()) ? BedWarsProxy.getParty().getMembers(p.getUniqueId()).size() : 1;
