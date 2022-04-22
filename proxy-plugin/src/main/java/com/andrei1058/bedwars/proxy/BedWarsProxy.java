@@ -93,7 +93,10 @@ public class BedWarsProxy extends JavaPlugin implements BedWars {
 
         //Party support
         if (config.getYml().getBoolean(ConfigPath.GENERAL_CONFIGURATION_ALLOW_PARTIES)) {
-            if (Bukkit.getServer().getPluginManager().isPluginEnabled("Parties")) {
+            if (Bukkit.getServer().getPluginManager().isPluginEnabled("AdvancedParties")) {
+                getLogger().info("Hook into AdvancedParties (by 2LS) support!");
+                party = new AdvancedParties();
+            } else if (Bukkit.getServer().getPluginManager().isPluginEnabled("Parties")) {
                 getLogger().info("Hook into Parties (by AlessioDP) support!");
                 party = new Parties();
             } else if (Bukkit.getServer().getPluginManager().isPluginEnabled("Spigot-Party-API-PAF")) {
