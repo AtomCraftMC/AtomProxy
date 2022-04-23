@@ -37,10 +37,6 @@
             <id>andrei1058-repo2</id>
             <url>https://repo.andrei1058.dev/snapshots/</url>
         </repository>
-        <repository>
-            <id>2lstudios-repo</id>
-            <url>https://ci.2lstudios.dev/plugin/repository/everything/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -87,11 +83,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>dev._2lstudios</groupId>
-            <artifactId>AdvancedParties</artifactId>
-            <version>0.0.2</version>
-        </dependency>
-        <dependency>
             <groupId>com.andrei1058.spigot.versionsupport</groupId>
             <artifactId>itemstack-version</artifactId>
             <version>1.6.3</version>
@@ -106,7 +97,7 @@
         <dependency>
             <groupId>com.andrei1058.spigot.versionsupport</groupId>
             <artifactId>sounds-version</artifactId>
-            <version>1.6.</version>
+            <version>1.6.3</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -224,7 +215,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.3.0-SNAPSHOT</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -245,14 +236,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>10</source>
-                    <target>10</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>
