@@ -37,6 +37,10 @@
             <id>andrei1058-repo2</id>
             <url>https://repo.andrei1058.dev/snapshots/</url>
         </repository>
+        <repository>
+            <id>2lstudios-repo</id>
+            <url>https://ci.2lstudios.dev/plugin/repository/everything/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -178,6 +182,11 @@
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>dev._2lstudios</groupId>
+            <artifactId>AdvancedParties</artifactId>
+            <version>0.0.2</version>
+        </dependency>
     </dependencies>
     <pluginRepositories>
         <pluginRepository>
@@ -199,7 +208,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.0.0-M1</version>
+                <version>3.0.0-M2</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -207,7 +216,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.2</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -215,7 +224,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.0-SNAPSHOT</version>
+                <version>3.3.1-SNAPSHOT</version>
                 <configuration>
                     <relocations>
                         <relocation>
